@@ -1,4 +1,4 @@
-use cursive::views::{Dialog, TextView};
+use cursive::views::{Dialog, LinearLayout, Panel, ScrollView, TextArea, TextView};
 use cursive::event::Key;
 use cursive::menu;
 use cursive::theme::BaseColor::{Black, White};
@@ -25,6 +25,13 @@ fn main() {
         );
 
     win.set_autohide_menu(false);
+
+    win.add_layer(LinearLayout::horizontal()
+        .child(ScrollView::new(Panel::new(
+            TextArea::new()
+                .content("Hello World")
+        )))
+    );
 
     win.add_global_callback('q', |w| w.quit());
     win.add_global_callback(Key::Esc, |w| w.select_menubar());
