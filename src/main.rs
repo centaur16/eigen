@@ -1,4 +1,4 @@
-use cursive::views::TextView;
+use cursive::views::{Dialog, TextView};
 use cursive::event::Key;
 use cursive::theme::Color;
 
@@ -9,6 +9,7 @@ fn main() {
         |t| {
                 t.shadow = false;
                 t.palette.set_color("Background", Color::Rgb(10, 10, 10));
+                t.palette.set_color("View", Color::Rgb(10, 10, 10));
                 t.palette.set_color("Primary", Color::Rgb(255, 255, 255));
             });
 
